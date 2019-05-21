@@ -48,7 +48,7 @@ img {
     background: rgba(32, 134, 107, 0.8); }
 
 #showcase-inner {
-  background-image: url(img/building.jpg) no-repeat top center fixed/cover;
+  background: url(../img/building.jpg) no-repeat top center fixed/cover;
   position: relative;
   overflow: hidden;
   min-height: 200px; }
