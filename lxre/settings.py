@@ -78,8 +78,11 @@ WSGI_APPLICATION = 'lxre.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'summerx',
+        'USER': 'postgres',
+        'PASSWORD':'Sm263646',
+        'HOST':'localhost'
     }
 }
 
