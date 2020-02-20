@@ -68,6 +68,9 @@ img {
 
 .listing-preview a {
   position: relative; }
+.form{
+  border: red;
+}
 
 @media (max-width: 991px) {
   #showcase {
