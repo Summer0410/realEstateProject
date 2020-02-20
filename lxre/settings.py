@@ -78,16 +78,34 @@ WSGI_APPLICATION = 'lxre.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'summerx',
+#         'USER': 'postgres',
+#         'PASSWORD':'Sm263646',
+#         'HOST':'localhost'
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'summerx',
-        'USER': 'postgres',
-        'PASSWORD':'Sm263646',
-        'HOST':'localhost'
-    }
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'real_estate',
+        'USER': 'summerxialinqiao@gmail.com@real-estate',
+        'PASSWORD': 'Sm263646',
+        'HOST': 'real-estate.database.windows.net',
+        'PORT': '',
+
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
+    },
 }
 
+# set this to False if you want to turn off pyodbc's connection pooling
+DATABASE_CONNECTION_POOLING = False
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
