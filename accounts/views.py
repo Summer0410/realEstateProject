@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from accounts.forms import registerForm, LoginForm
 from django.contrib.auth.models import User
-
+from django.contrib.auth import authenticate
+from django.template import RequestContext
 # Create your views here.
 def register(request):
     if request.method == 'POST':
@@ -23,11 +24,22 @@ def register(request):
                 else:
                     user = User.objects.create_user(username = username, email= email, first_name  = first_name, last_name = last_name,password=password)
                     user.save()
-                    return render(request, 'accounts/login.html')
+                    return render(RequestContext(request), 'accounts/login.html')
     return render(request, 'accounts/register.html')
+
 def login(request):
-    return render(request, 'accounts/login.html')
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username,password=password)
+        if user is not None:
+            print("You're loged in\n")
+            return render(request, 'accounts/dashboard.html')
+        else:
+            print("Invalid input\n")
+
 def logout(request):
     return redirect('index')
+
 def dashboard(request):
     return render(request, 'accounts/dashboard.html')

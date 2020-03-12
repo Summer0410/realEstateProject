@@ -74,21 +74,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'lxre.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'summerx',
-#         'USER': 'postgres',
-#         'PASSWORD':'Sm263646',
-#         'HOST':'localhost'
-#     }
-# }
-
-
+#Database set up
 DATABASES = {
     'default': {
         'ENGINE': 'sql_server.pyodbc',

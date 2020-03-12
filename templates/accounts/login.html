@@ -11,6 +11,7 @@
             </div>
             <div class="card-body">
               <form action="{% url 'login'%}" method = "POST">
+                {% csrf_token %}
                 <div class="form-group">
                   <label for="username">Username</label>
                   <input type="text" name="username" class="form-control" required>
