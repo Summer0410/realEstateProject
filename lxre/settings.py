@@ -78,8 +78,8 @@ WSGI_APPLICATION = 'lxre.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'real_estate',
-        'USER': 'summerxialinqiao@gmail.com@real-estate',
+        'NAME': 'realEstateApp',
+        'USER': 'sxia',
         'PASSWORD': 'Sm263646',
         'HOST': 'real-estate.database.windows.net',
         'PORT': '',

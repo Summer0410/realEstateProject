@@ -15,28 +15,25 @@ def register(request):
         #check if passwords match
         if password == password2:
             if User.objects.filter(username=username).exists():
-                print("user exist")
-                return redirect('accounts/register.html')
+                return redirect('register')
             else:
                 if User.objects.filter(email=email).exists():
-                    print("email has been used")
-                    return redirect('accounts/register.html')
+                    return redirect('register')
                 else:
                     user = User.objects.create_user(username = username, email= email, first_name  = first_name, last_name = last_name,password=password)
                     user.save()
-                    return render(RequestContext(request), 'accounts/login.html')
+                    return redirect('login')
     return render(request, 'accounts/register.html')
 
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(username=username,password=password)
+        user = authenticate(username=username, password=password)
         if user is not None:
-            print("You're loged in\n")
             return render(request, 'accounts/dashboard.html')
-        else:
-            print("Invalid input\n")
+    return render(request,'accounts/login.html')
+    
 
 def logout(request):
     return redirect('index')
