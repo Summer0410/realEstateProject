@@ -4,7 +4,7 @@ bdist-mpkg==0.5.0
 bonjour-py==0.3
 certifi==2019.6.16
 cffi==1.12.2
-cryptography==2.6.1
+cryptography==3.2
 enum34==1.1.6
 future==0.17.1
 ipaddress==1.0.22
